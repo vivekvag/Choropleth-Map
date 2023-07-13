@@ -1,0 +1,59 @@
+<!-- ---
+title: "World Map"
+output:
+  html_document
+--- -->
+
+<!-- <style>
+  .r2d3{
+    display:None;
+  }
+  svg{
+    background: lightblue !important;
+  }
+  .country{
+    fill: green !important;
+    stroke: black !important;
+  }
+</style> -->
+
+<script src="https://unpkg.com/topojson@3"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+```{r echo=FALSE,message=FALSE,results='asis',warning = FALSE}
+
+library(dplyr)
+library(r2d3)
+# library(maps)
+library(jsonlite)
+
+# device_data <- read.csv("syndeo_active_devices_report.csv")
+# device_data <- device_data[device_data$Country != "",]
+
+# grp_data <- device_data %>% group_by(Country) %>%
+#             summarise(count = n(),
+#             .groups = 'drop')
+
+# Convert data frame to JSON
+# json <- toJSON(as.list(grp_data))
+
+# Print the JSON data
+# print(json_data)
+
+print("In R")
+
+# download.file("https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.js", "leaflet-0.7.js")
+# download.file("https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js", "d3-scale-radial.js")
+# download.file("https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js", "d3-tip.min.js")
+
+
+r2d3(data,script = "bundle.js")
+
+# r2d3(script = "bundle.js")
+    #  dependencies = list("leaflet-0.7.js",
+    #                      "d3-scale-radial.js",
+    #                      "d3-tip.min.js"))
+
+```
